@@ -17,7 +17,7 @@ By simply plotting the fast Fourier transforms of the signals wrt to the frequen
 MLPs are universal function approximators, ie they can approximate any continuous functions on compact subsets of R<sup>n</sup> (under mild assumptions on the activation function). This is the universal approximation theorem. As such, MLP are a generic model that can adapt and solve complex tasks. By leveraging new computational software and hardware, MLP and deep-MLP can be trained very efficiently for both regression and classification problems, using the appropriate loss and the backpropagation algorithm.
 
 However, deep-learning can have very slow convergence compared to numerical methods designed for a specific task. In the context of speech recognition and signal processing for exemple, using the fast Fourier Transform (FFT) on the data allows to almost directly distinguish between the digits, and requires only o(nlog(n)). Learning the FFT using a ANN (with linear activation function) would be more computationaly intensive.
-The best solution for solving this problem is to use the 1D-scattering transform, as proposed here:
+The best solution for solving this problem would actually require to use another feature extractor, the 1D-scattering transform, as proposed here:
   https://www.kymat.io/gallery_1d/plot_classif.html
   
 The Border Pair Method is an iterative procedure of building the optimal (smallest) MLP and computing the value of the parameters of the MLP directly from the geometry of the training data, thus avoiding the use of backpropagation. Link:
